@@ -39,7 +39,7 @@ namespace GDPAssessmentTest.Rules
 		public void ReadRulesForCustomer_AllCustomer_ReturnsAllRulesForAllCustomer()
 		{
 			// Arrange
-			var rule_file_path = ConfigurationManager.AppSettings["pricing_rule_path_test"];
+			var rule_file_path = ConfigurationManager.AppSettings["SpecialPricingRulePathTest"];
 			// Act
 			var result = RuleHelper.ReadRules(rule_file_path);
 			// Assert

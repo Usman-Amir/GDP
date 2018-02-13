@@ -27,7 +27,7 @@ namespace GDPAssessment
 		private static List<CustomerRule> GetRulesofAllCustomer()
 		{
 			// Read the rules
-			return RuleHelper.ReadRules(ConfigurationManager.AppSettings["pricing_rule_path"]);
+			return RuleHelper.ReadRules(ConfigurationManager.AppSettings["SpecialPricingRulePath"]);
 		}
 
 		private static void CheckoutDefault(List<CustomerRule> fileRules)
