@@ -32,7 +32,7 @@ namespace GDPAssessment
 
 		private static void CheckoutDefault(List<CustomerRule> fileRules)
 		{
-			Console.WriteLine("Total of cart is : " + AdsCheckout.PerformCheckout(
+			Console.WriteLine("Total of Cart is : " + AdsCheckout.PerformCheckout(
 							new List<Product>
 							{
 					new ClassicAd(),
