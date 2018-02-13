@@ -1,6 +1,8 @@
 ﻿language: csharp
-solution: "./GDPAssessment.sln"
-install:
-  - sudo apt-get install mono-devel mono-gmcs nunit-console
-script:
-- xbuild ./GDPAssessment.sln
+solution: GDPAssessment.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore GDPAssessment.sln
+after_script:
+  - nunit-console GDPAssessmentTest/bin/Release/GDPAssessmentTest.dll
