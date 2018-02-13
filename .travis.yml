@@ -1,4 +1,4 @@
-language: csharp
+language: c#
 solution: GDPAssessment.sln
 before_install:
   - sudo apt-get install nunit-console

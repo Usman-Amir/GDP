@@ -7,6 +7,7 @@ using GDPAssessment.Products;
 using GDPAssessment.Rules;
 using GDPAssessment.Cart;
 using System.Configuration;
+using System.IO;
 
 namespace GDPAssessment
 {
@@ -27,7 +28,7 @@ namespace GDPAssessment
 		private static List<CustomerRule> GetRulesofAllCustomer()
 		{
 			// Read the rules
-			return RuleHelper.ReadRules(ConfigurationManager.AppSettings["SpecialPricingRulePath"]);
+			return RuleHelper.ReadRules(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", @"Scripts\SpecialPricingRules.json"));
 		}
 
 		private static void CheckoutDefault(List<CustomerRule> fileRules)
