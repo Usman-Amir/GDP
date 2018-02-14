@@ -22,11 +22,7 @@ namespace GDPAssessment.Rules
 
 			if (selectedItems.Count() >= this.Purchased)
 			{
-				for (int i = 0; i < this.Purchased; i++)
-				{
-					cartItems.Remove(cartItems.FirstOrDefault(x => x.Name == this.ProductName));
-				}
-
+				cartItems.RemoveAll(x => x.Name == this.ProductName);
 				return new ProductPrice(cartItems, itemPrice * this.ChargedFor);
 			}
 

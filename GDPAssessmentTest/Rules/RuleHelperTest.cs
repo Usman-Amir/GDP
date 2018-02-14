@@ -10,7 +10,7 @@ namespace GDPAssessmentTest.Rules
 	public class RuleHelperTest
 	{
 		[TestMethod]
-		public void GetRulesForCustomer_NoMatchRule_ReturnsBasicRule()
+		public void GetRulesForCustomer_EmptyRule_ReturnsBasicRule()
 		{
 			// Arrange
 			var customerRule = new List<CustomerRule> { };
@@ -21,7 +21,7 @@ namespace GDPAssessmentTest.Rules
 		}
 
 		[TestMethod]
-		public void GetRulesForCustomer_SpecificCustomer_ReturnsSpecialAndBasicRule()
+		public void GetRulesForCustomer_RuleforSpecificCustomer_ReturnsSpecialRule()
 		{
 			// Arrange
 			var customerRule = new List<CustomerRule> {

@@ -13,7 +13,7 @@ namespace GDPAssessmentTest.Rules
 		private readonly Discount _target = new Discount();
 
 		[TestMethod]
-		public void execute_NoProduct_ReturnsNothing()
+		public void executeRule_NoProduct_ReturnsNothing()
 		{
 			// Arrange
 			var products = new List<Product> { };
@@ -25,7 +25,7 @@ namespace GDPAssessmentTest.Rules
 		}
 
 		[TestMethod]
-		public void execute_DifferentProduct_ReturnsRemainingItemsAndDiscountedPrice()
+		public void executeRule_MultipleProduct_ReturnsRemainingItemsWithDiscountedPrice()
 		{
 			// Arrange
 			_target.ProductName = "Classic Ad";

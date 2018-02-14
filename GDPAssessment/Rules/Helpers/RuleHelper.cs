@@ -22,19 +22,19 @@ namespace GDPAssessment.Rules
 
 		public static List<CustomerRule> ReadRules(String filename)
 		{
-			dynamic ruleTupples = GetRulesTupples(filename);
+			dynamic ListOfAllRules = GetRulesTupples(filename);
 
-			List<CustomerRule> allRules = new List<CustomerRule>();
+			List<CustomerRule> ListOfCustomerRule = new List<CustomerRule>();
 
-			foreach (var tup in ruleTupples)
+			foreach (var SelectedRule in ListOfAllRules)
 			{
-				var ruleTup = tup.rule;
-				if (tup.is_valid)
+				var ruleTup = SelectedRule.rule;
+				if (SelectedRule.is_valid)
 				{
-					allRules.Add(
+					ListOfCustomerRule.Add(
 					new CustomerRule()
 					{
-						CustomerName = tup.customer_name,
+						CustomerName = SelectedRule.customer_name,
 						Rule = RuleMaker.MakeRule(
 							ruleTup.product_name,
 							ruleTup.rule_type,
@@ -42,7 +42,7 @@ namespace GDPAssessment.Rules
 					});
 				}
 			}
-			return allRules;
+			return ListOfCustomerRule;
 		}
 
 		private static dynamic GetRulesTupples(string filename)

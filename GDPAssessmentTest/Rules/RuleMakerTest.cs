@@ -9,18 +9,18 @@ namespace GDPAssessmentTest.Rules
 	public class RuleMakerTest
 	{
 		[TestMethod]
-		public void GetRulesForCustomer_NoMatchRule_ReturnsBasicRule()
+		public void GetRulesForCustomer_RuleNotMatched_ReturnsDefaultRule()
 		{
 			// Arrange
 			dynamic param = new ExpandoObject();
 			// Act
-			var result = RuleMaker.MakeRule("New Product", "promotions", param);
+			var result = RuleMaker.MakeRule("Default", "promotions", param);
 			// Assert
-			Assert.AreEqual("New Product", result.ProductName);
+			Assert.AreEqual("Default", result.ProductName);
 		}
 
 		[TestMethod]
-		public void GetRulesForCustomer_Discount_ReturnsDiscountRule()
+		public void GetRulesForCustomer_RuleForDiscount_ReturnsDiscountRule()
 		{
 			// Arrange
 			dynamic param = new ExpandoObject();
@@ -32,7 +32,7 @@ namespace GDPAssessmentTest.Rules
 			Assert.AreEqual("Classic Ad", result.ProductName);
 		}
 		[TestMethod]
-		public void GetRulesForCustomer_pricedrop_ReturnpricedropRule()
+		public void GetRulesForCustomer_RuleForPriceDrop_ReturnpricedropRule()
 		{
 			// Arrange
 			dynamic param = new ExpandoObject();

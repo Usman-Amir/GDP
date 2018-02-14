@@ -13,7 +13,7 @@ namespace GDPAssessmentTest.Rules
 		private Rule _target;
 
 		[TestMethod]
-		public void execute_WithoutProduct_ReturnsNull()
+		public void executeRule_WithoutProduct_ReturnsNull()
 		{
 			// Arrange
 			_target = new Rule();
@@ -25,7 +25,7 @@ namespace GDPAssessmentTest.Rules
 		}
 
 		[TestMethod]
-		public void execute_DifferentProduct_ReturnsRemaingItemsAndPrice()
+		public void executeRule_DifferentProduct_ReturnsRemaingItemsAndPrice()
 		{
 			// Arrange
 			_target = new Rule();
