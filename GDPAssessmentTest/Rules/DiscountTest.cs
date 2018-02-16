@@ -1,9 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+
+using NUnitAssert = NUnit.Framework.Assert;
 using GDPAssessment.Products;
 using System.Collections.Generic;
 using GDPAssessment.Rules;
 using System.Linq;
+using NUnit.Framework;
 
 namespace GDPAssessmentTest.Rules
 {

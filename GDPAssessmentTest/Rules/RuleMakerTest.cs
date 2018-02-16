@@ -1,14 +1,22 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+
+using NUnitAssert = NUnit.Framework.Assert;
 using System.Dynamic;
 using GDPAssessment.Rules;
+using NUnit.Framework;
 
 namespace GDPAssessmentTest.Rules
 {
-	[TestClass]
+	[@TestClass]
 	public class RuleMakerTest
 	{
-		[TestMethod]
+		[@TestMethod]
 		public void GetRulesForCustomer_RuleNotMatched_ReturnsDefaultRule()
 		{
 			// Arrange
@@ -19,25 +27,25 @@ namespace GDPAssessmentTest.Rules
 			Assert.AreEqual("Default", result.ProductName);
 		}
 
-		[TestMethod]
+		[@TestMethod]
 		public void GetRulesForCustomer_RuleForDiscount_ReturnsDiscountRule()
 		{
 			// Arrange
 			dynamic param = new ExpandoObject();
 			param.purchased = 3;
-			param.charged_for = 2;
+			param.chargedfor = 2;
 			// Act
 			var result = RuleMaker.MakeRule("Classic Ad", "discount", param);
 			// Assert
 			Assert.AreEqual("Classic Ad", result.ProductName);
 		}
-		[TestMethod]
+		[@TestMethod]
 		public void GetRulesForCustomer_RuleForPriceDrop_ReturnpricedropRule()
 		{
 			// Arrange
 			dynamic param = new ExpandoObject();
-			param.dropped_price = 299.99;
-			param.min_num_items = 1;
+			param.droppedprice = 299.99;
+			param.minnumitems = 1;
 			// Act
 			var result = RuleMaker.MakeRule("Standout Ad", "price_drop", param);
 			// Assert

@@ -1,9 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+
+using NUnitAssert = NUnit.Framework.Assert;
 using GDPAssessment.Rules;
 using GDPAssessment.Products;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
 
 namespace GDPAssessmentTest.Price
 {
@@ -13,7 +21,7 @@ namespace GDPAssessmentTest.Price
 		private readonly PriceDrop _target = new PriceDrop();
 
 		[TestMethod]
-		public void execute_NoProduct_ReturnsNothing()
+		public void executeRule_WithoutProduct_ReturnZeroPrice()
 		{
 			// Arrange
 			var products = new List<Product> { };
@@ -25,7 +33,7 @@ namespace GDPAssessmentTest.Price
 		}
 
 		[TestMethod]
-		public void execute_DifferentProduct_ReturnsRemainingItemsAndDroppedPrice()
+		public void executeRule_DifferentProducts_ReturnsDroppeedPriceandItems()
 		{
 			// Arrange
 			_target.ProductName = "Premium Ad";

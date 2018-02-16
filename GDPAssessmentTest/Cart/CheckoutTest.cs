@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 using GDPAssessment.Products;
 using GDPAssessment.Rules;
 using GDPAssessment.Cart;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+
+using NUnitAssert = NUnit.Framework.Assert;
+using NUnit.Framework;
 
 namespace GDPAssessmentTest.Cart
 {
@@ -14,7 +22,7 @@ namespace GDPAssessmentTest.Cart
 	public class CheckoutTest
 	{
 		[TestMethod]
-		public void PerformCheckout_NoProduct_ReturnsNothing()
+		public void CheckoutProduct_WithoutProduct_ReturnsZeroProduct()
 		{
 			// Arrange
 			var products = new List<Product> { };
@@ -26,7 +34,7 @@ namespace GDPAssessmentTest.Cart
 		}
 
 		[TestMethod]
-		public void PerformCheckout_DifferentProductWithRules_ReturnsTotalAmount()
+		public void CheckoutProduct_DifferentProductWithRules_ReturnsTotalAmount()
 		{
 			// Arrange
 			var products = new List<Product> {
@@ -43,7 +51,7 @@ namespace GDPAssessmentTest.Cart
 			Assert.AreEqual(664.98, result);
 		}
 		[TestMethod]
-		public void PerformCheckout_NikeProductWithRules_ReturnDiscountedPrice()
+		public void CheckoutProduct_NikeProductWithRules_ReturnDiscountedPriceAsPerRule()
 		{
 			//Arrange
 			var products = new List<Product> {
