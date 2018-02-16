@@ -11,6 +11,7 @@ using GDPAssessment.Rules;
 using System.Collections.Generic;
 using System.Configuration;
 using NUnit.Framework;
+using System.IO;
 
 namespace GDPAssessmentTest.Rules
 {
@@ -47,7 +48,7 @@ namespace GDPAssessmentTest.Rules
 		public void ReadRulesForCustomer_AllCustomer_ReturnsAllRulesForAllCustomer()
 		{
 			// Arrange
-			var rule_file_path = ConfigurationManager.AppSettings["SpecialPricingRulePathTest"];
+			var rule_file_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", @"/Scripts/SpecialPricingRules.json"); ;
 			// Act
 			var result = RuleHelper.ReadRules(rule_file_path);
 			// Assert
