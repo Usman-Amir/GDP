@@ -43,16 +43,5 @@ namespace GDPAssessmentTest.Rules
 			// Assert
 			Assert.AreEqual(2, result.Count);
 		}
-
-		[TestMethod]
-		public void ReadRulesForCustomer_AllCustomer_ReturnsAllRulesForAllCustomer()
-		{
-			// Arrange
-			var rule_file_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", @"/Scripts/SpecialPricingRules.json"); ;
-			// Act
-			var result = RuleHelper.ReadRules(rule_file_path);
-			// Assert
-			Assert.AreEqual(6, result.Count);
-		}
 	}
 }
