@@ -1,75 +1,75 @@
 ﻿[
 	{
-		"customer_name": "unilever",
+		"customername": "unilever",
 		"rule": {
-			"product_name": "Classic Ad",
-			"rule_type": "discount",
-			"rule_parameters": {
+			"productname": "Classic Ad",
+			"ruletype": "discount",
+			"ruleparameters": {
 				"purchased": 3,
-				"charged_for": 2
+				"chargedfor": 2
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	},
 	{
-		"customer_name": "apple",
+		"customername": "apple",
 		"rule": {
-			"product_name": "Standout Ad",
-			"rule_type": "price_drop",
-			"rule_parameters": {
-				"dropped_price": 299.99,
-				"min_num_items": 1
+			"productname": "Standout Ad",
+			"ruletype": "price_drop",
+			"ruleparameters": {
+				"droppedprice": 299.99,
+				"minnumitems": 1
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	},
 	{
-		"customer_name": "nike",
+		"customername": "nike",
 		"rule": {
-			"product_name": "Premium Ad",
-			"rule_type": "price_drop",
-			"rule_parameters": {
-				"dropped_price": 379.99,
-				"min_num_items": 4
+			"productname": "Premium Ad",
+			"ruletype": "price_drop",
+			"ruleparameters": {
+				"droppedprice": 379.99,
+				"minnumitems": 4
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	},
 
 	{
-		"customer_name": "ford",
+		"customername": "ford",
 		"rule": {
-			"product_name": "Classic Ad",
-			"rule_type": "discount",
-			"rule_parameters": {
+			"productname": "Classic Ad",
+			"ruletype": "discount",
+			"ruleparameters": {
 				"purchased": 5,
-				"charged_for": 4
+				"chargedfor": 4
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	},
 	{
-		"customer_name": "ford",
+		"customername": "ford",
 		"rule": {
-			"product_name": "Standout Ad",
-			"rule_type": "price_drop",
-			"rule_parameters": {
-				"dropped_price": 309.99,
-				"min_num_items": 1
+			"productname": "Standout Ad",
+			"ruletype": "price_drop",
+			"ruleparameters": {
+				"droppedprice": 309.99,
+				"minnumitems": 1
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	},
 	{
-		"customer_name": "ford",
+		"customername": "ford",
 		"rule": {
-			"product_name": "Premium Ad",
-			"rule_type": "price_drop",
-			"rule_parameters": {
-				"dropped_price": 389.99,
-				"min_num_items": 3
+			"productname": "Premium Ad",
+			"ruletype": "price_drop",
+			"ruleparameters": {
+				"droppedprice": 389.99,
+				"minnumitems": 3
 			}
 		},
-		"is_valid": true
+		"isvalid": true
 	}
 ]

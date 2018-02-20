@@ -23,12 +23,15 @@ namespace GDPAssessment
 				CheckoutUnilever(fileRules);
 				CheckoutApple(fileRules);
 				CheckoutNike(fileRules);
+				Console.WriteLine("Press enter key to exit.");
+				Console.Read();
+
 			}
 		}
 		private static List<CustomerRule> GetRulesofAllCustomer()
 		{
 			// Read the rules
-			return RuleHelper.ReadRules(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", @"Scripts\SpecialPricingRules.json"));
+			return RuleHelper.ReadRules(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", @"assets\pricing_rules.json"));
 		}
 
 		private static void CheckoutDefault(List<CustomerRule> fileRules)

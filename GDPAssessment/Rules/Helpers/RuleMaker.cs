@@ -16,15 +16,15 @@ namespace GDPAssessment.Rules
 					return new Discount()
 					{
 						Purchased = (int)param.purchased,
-						ChargedFor = (int)param.charged_for,
+						ChargedFor = (int)param.chargedfor,
 						ProductName = productName
 					};
 
 				case "price_drop":
 					return new PriceDrop()
 					{
-						DroppedPrice = (double)param.dropped_price,
-						MinNumItems = (int)param.min_num_items,
+						DroppedPrice = (double)param.droppedprice,
+						MinNumItems = (int)param.minnumitems,
 						ProductName = productName
 					};
 

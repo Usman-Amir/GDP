@@ -29,16 +29,16 @@ namespace GDPAssessment.Rules
 			foreach (var SelectedRule in ListOfAllRules)
 			{
 				var ruleTup = SelectedRule.rule;
-				if (SelectedRule.is_valid)
+				if (SelectedRule.isvalid)
 				{
 					ListOfCustomerRule.Add(
 					new CustomerRule()
 					{
-						CustomerName = SelectedRule.customer_name,
+						CustomerName = SelectedRule.customername,
 						Rule = RuleMaker.MakeRule(
-							ruleTup.product_name,
-							ruleTup.rule_type,
-							ruleTup.rule_parameters)
+							ruleTup.productname,
+							ruleTup.ruletype,
+							ruleTup.ruleparameters)
 					});
 				}
 			}
